@@ -13,13 +13,12 @@ public class HousesReducer  extends Reducer <Text,IntWritable,Text,FloatWritable
 
 	public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException 
 	{
-		// TODO: initialize min and max values
+		
 		float min=9999999.99f, max=0.0f, count=0.0f,sum=0.0f;
 		float mean=0.0f;
 		FloatWritable result = new FloatWritable();
 
 
-		// TODO: loop through values to determine min, max, count, and sum
 		for(IntWritable price:values)
 		{
 			sum=(float)(sum+price.get());
